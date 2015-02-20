@@ -1,0 +1,11 @@
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
+<h1>
+  <%= @status.user %>'s status:
+</h1>
+
+<p>
+  <%= @status.status_message %>
+</p>
