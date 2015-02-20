@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
 <h1> All the Statuses </h1>
 
 <table>
@@ -6,7 +10,6 @@
       <th>User's Name</th>
       <th>Status Message</th>
       <th>Number of Likes</th>
-      <th>Like this Status</th>
     </tr>
   </thead>
 
@@ -17,6 +20,8 @@
       <td> <%= status.status_message %> </td>
       <td> <%= status.likes %> </td>
       <td> <%= link_to "Like this!", 'http://www.google.com' %> </td>
+      <td> <%= link_to "Edit", edit_status_path(status) %> </td>
+      <td> <%= link_to "Delete", status, method: :delete, data: { confirm: 'Are you sure?' } %>
     </tr>
     <% end %>
   </tbody>
