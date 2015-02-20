@@ -15,7 +15,7 @@ class StatusesController < ApplicationController
   def create
     @status = Status.new(status_params)
     if @status.save
-      redirect to status_show[params(:id)], notice: 'Status successfully created.'
+      redirect_to status_path(@status), notice: 'Status successfully created.'
     else
       flash.now[:alert] = 'There were some errors that prevented your status from being saved'
       flash.now[:alert] << "<br>"
