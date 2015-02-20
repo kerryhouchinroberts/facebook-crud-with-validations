@@ -1,3 +1,12 @@
+<% if flash.now[:alert] %>
+<h2><%= pluralize(@status.errors.count, "error") %> prohibited this form from being saved:</h2>
+<ul>
+  <% @status.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+  </ul>
+<% end %>
+
 <%= form_for @status do |f| %>
   <%= f.label :status_message %>
   <br>

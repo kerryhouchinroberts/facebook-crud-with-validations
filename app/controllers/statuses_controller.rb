@@ -17,9 +17,7 @@ class StatusesController < ApplicationController
     if @status.save
       redirect_to status_path(@status), notice: 'Status was successfully created.'
     else
-      flash.now[:alert] = 'There were some errors that prevented your status from being saved'
-      flash.now[:alert] << "<br>"
-      flash.now[:alert] << @status.errors.full_messages.join("<br>")
+      flash.now[:alert] = @status.errors.full_messages.join("<br>")
       render :new
     end
   end
@@ -34,9 +32,7 @@ class StatusesController < ApplicationController
     if @status.update_attributes(status_params)
       redirect_to status_path(@status), notice: 'Status was successfully updated.'
     else
-      flash.now[:alert] = 'There were some errors that prevented your status from being saved'
-      flash.now[:alert] << "<br>"
-      flash.now[:alert] << @status.errors.full_messages.join("<br>")
+      flash.now[:alert] = @status.errors.full_messages.join("<br>")
       render :edit
     end
   end
