@@ -1,0 +1,23 @@
+<h1> All the Statuses </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User's Name</th>
+      <th>Status Message</th>
+      <th>Number of Likes</th>
+      <th>Like this Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @statuses.each do |status| %>
+    <tr>
+      <td> <%= link_to status.user, status %> </td>
+      <td> <%= status.status_message %> </td>
+      <td> <%= status.likes %> </td>
+      <td> <%= link_to "Like this!", 'http://www.google.com' %> </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
