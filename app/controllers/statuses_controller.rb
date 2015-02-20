@@ -34,7 +34,6 @@ class StatusesController < ApplicationController
       redirect_to statuses_path, notice: 'Status was sucessfully deleted.'
     end
   end
-  end
 
   private
   def status_params
