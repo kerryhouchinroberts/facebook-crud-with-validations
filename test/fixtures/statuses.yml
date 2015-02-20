@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status_message: MyText
+  user: MyString
+  likes: 1
+
+two:
+  status_message: MyText
+  user: MyString
+  likes: 1
