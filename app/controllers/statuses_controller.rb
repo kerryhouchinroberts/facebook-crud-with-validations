@@ -44,6 +44,12 @@ class StatusesController < ApplicationController
     end
   end
 
+  def like
+    @status = Status.find(params[:id])
+    @like = Status.increment_counter(:likes, @status)
+    redirect_to root_path
+  end
+
   private
   def status_params
     params.require(:status).permit(:status_message, :user, :likes)

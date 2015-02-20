@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :statuses
 
   root 'statuses#index'
+  get '/statuses/:id/like' => 'statuses#like', as: :like
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
